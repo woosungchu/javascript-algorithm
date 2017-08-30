@@ -1,0 +1,24 @@
+{
+  "name": "javascript-algorithm",
+  "version": "1.0.0",
+  "description": "Javascript Algorithm",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woosungchu/javascript-algorithm.git"
+  },
+  "keywords": [
+    "javascript",
+    "node",
+    "algorithm"
+  ],
+  "author": "woosungchu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/woosungchu/javascript-algorithm/issues"
+  },
+  "homepage": "https://github.com/woosungchu/javascript-algorithm#readme"
+}
