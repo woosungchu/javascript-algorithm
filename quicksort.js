@@ -11,8 +11,8 @@ function sort(arr){
 	
 	arr.forEach(function(a){
 		if(a < pivot) lt.push(a);
-		if(a > pivot) gt.push(a);
-		if(a == pivot) eq.push(a);
+		else if(a > pivot) gt.push(a);
+		else eq.push(a);
 	})
 	
 	return sort(lt).concat(eq).concat(sort(gt));
