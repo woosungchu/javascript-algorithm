@@ -2,43 +2,21 @@ var arr = process.argv[2] || [11,8,14,3,6,2,7];
 var left = process.argv[3] || 0;
 var right = process.argv[4] || arr.length;
 
-//https://khan4019.github.io/front-end-Interview-Questions/sort.html#quickSort
-function quickSort(arr, left, right){
-   var len = arr.length, 
-   pivot,
-   partitionIndex;
-
-
-  if(left < right){
-    pivot = right;
-    partitionIndex = partition(arr, pivot, left, right);
-    
-   //sort left and right
-   quickSort(arr, left, partitionIndex - 1);
-   quickSort(arr, partitionIndex + 1, right);
-  }
-  return arr;
-}
-	     
-function partition(arr, pivot, left, right){
-   var pivotValue = arr[pivot],
-       partitionIndex = left;
-
-   for(var i = left; i < right; i++){
-    if(arr[i] < pivotValue){
-      swap(arr, i, partitionIndex);
-      partitionIndex++;
-    }
-  }
-  swap(arr, right, partitionIndex);
-  return partitionIndex;
-}
-
-function swap(arr, i, j){
-   var temp = arr[i];
-   arr[i] = arr[j];
-   arr[j] = temp;
+function sort(arr){
+	var len = arr.length,
+		pivot = arr[Math.floor(len / 2)],
+		lt = [], gt = [], eq = [];
+	
+	if(len <= 1)return arr;
+	
+	arr.forEach(function(a){
+		if(a < pivot) lt.push(a);
+		if(a > pivot) gt.push(a);
+		if(a == pivot) eq.push(a);
+	})
+	
+	return sort(lt).concat(eq).concat(sort(gt));
 }
 
 console.log(arr);
-console.log(quickSort(arr,0,6));
+console.log(sort(arr));
